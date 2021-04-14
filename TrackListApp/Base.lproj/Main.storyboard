@@ -1,58 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Syc-bx-zY4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tDm-Rf-Bhi">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="pmj-K1-4Lg">
+        <!--Track List-->
+        <scene sceneID="ERK-rd-Euj">
             <objects>
-                <tableViewController id="zR3-5Y-bad" customClass="ViewController" customModule="TrackListApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qCr-DP-2gV">
+                <tableViewController id="oI4-IR-qf8" customClass="TrackListViewController" customModule="TrackListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xaU-xj-bXe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="eYa-YH-PnE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrackName" id="2m8-ry-qFM">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eYa-YH-PnE" id="ATL-rb-HGu">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2m8-ry-qFM" id="hgg-Of-dmY">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="XI1-Ys-YdA" kind="show" id="OY1-7b-Hqh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="zR3-5Y-bad" id="zMs-27-fuz"/>
-                            <outlet property="delegate" destination="zR3-5Y-bad" id="Pec-In-m9W"/>
+                            <outlet property="dataSource" destination="oI4-IR-qf8" id="YDo-4X-wU0"/>
+                            <outlet property="delegate" destination="oI4-IR-qf8" id="nQc-h3-ZhA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ybs-D5-Kxt"/>
+                    <navigationItem key="navigationItem" title="Track List" id="UnI-z7-p4N"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="abM-U5-JwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RK5-hC-8jv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1519.2" y="94.902548725637189"/>
+            <point key="canvasLocation" x="1400" y="34"/>
+        </scene>
+        <!--Detail Track-->
+        <scene sceneID="lj8-Pb-LNE">
+            <objects>
+                <viewController id="XI1-Ys-YdA" customClass="DetailViewController" customModule="TrackListApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f3o-n0-Yvy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eSg-Cb-gxe">
+                                <rect key="frame" x="30" y="74" width="315" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="211" id="gnB-dj-g71"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIN-aJ-pTo">
+                                <rect key="frame" x="30" y="315" width="315" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JS9-ce-RY6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eSg-Cb-gxe" firstAttribute="leading" secondItem="JS9-ce-RY6" secondAttribute="leading" constant="30" id="4ML-0t-QX5"/>
+                            <constraint firstItem="cIN-aJ-pTo" firstAttribute="top" secondItem="eSg-Cb-gxe" secondAttribute="bottom" constant="30" id="BxR-8p-1JN"/>
+                            <constraint firstItem="cIN-aJ-pTo" firstAttribute="leading" secondItem="JS9-ce-RY6" secondAttribute="leading" constant="30" id="M20-aZ-hOx"/>
+                            <constraint firstItem="JS9-ce-RY6" firstAttribute="trailing" secondItem="eSg-Cb-gxe" secondAttribute="trailing" constant="30" id="WDZ-rD-YY6"/>
+                            <constraint firstItem="JS9-ce-RY6" firstAttribute="trailing" secondItem="cIN-aJ-pTo" secondAttribute="trailing" constant="30" id="e4D-CM-aGl"/>
+                            <constraint firstItem="eSg-Cb-gxe" firstAttribute="top" secondItem="JS9-ce-RY6" secondAttribute="top" constant="30" id="pkC-cr-VGk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail Track" id="1D9-pi-56e"/>
+                    <connections>
+                        <outlet property="imageView" destination="eSg-Cb-gxe" id="D92-kO-dTC"/>
+                        <outlet property="trackNameLabel" destination="cIN-aJ-pTo" id="Bj4-bX-q6T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zLT-bh-fXn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2285.5999999999999" y="33.733133433283363"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="CGd-sw-CFN">
+        <scene sceneID="e4g-1O-ndK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Syc-bx-zY4" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y5S-x2-Eq9">
+                <navigationController id="tDm-Rf-Bhi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Asw-aA-ZAk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zR3-5Y-bad" kind="relationship" relationship="rootViewController" id="zKY-cw-fAz"/>
+                        <segue destination="oI4-IR-qf8" kind="relationship" relationship="rootViewController" id="KRP-DM-25w"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fGd-mP-Vnh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QTV-Oc-3xl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="580" y="94.902548725637189"/>
+            <point key="canvasLocation" x="481" y="34"/>
         </scene>
     </scenes>
     <resources>
